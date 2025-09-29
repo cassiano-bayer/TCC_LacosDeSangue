@@ -7,7 +7,6 @@ if (!isset($_SESSION['usuario_id'])) {
     exit();
 }
 
-// NOVO: Buscar dados atuais do usuário no banco
 $usuario_id = $_SESSION['usuario_id'];
 $sql_usuario = "SELECT nome_completo, tipo_sanguineo FROM usuarios WHERE id = ?";
 $stmt_usuario = $conexao->prepare($sql_usuario);
@@ -737,4 +736,5 @@ usort($outros_hospitais, 'ordenarPorUrgencia');
         });
     </script>
 </body>
+
 </html>
